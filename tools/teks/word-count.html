@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word & Character Count – Hitung Kata dan Karakter Online | ToolboxOnline</title>
+  <meta name="description" content="Hitung jumlah kata, karakter, kalimat, dan paragraf dari teks secara online. Gratis, instan, tanpa login." />
+  <link rel="canonical" href="https://projectinstudio-netizen.github.io/toolkit/tools/teks/word-count.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F172A; --surface: #1E293B; --border: #334155;
+      --accent: #22D3EE; --accent-dim: #0E7490;
+      --text: #F8FAFC; --muted: #94A3B8;
+      --radius: 12px; --font: 'Plus Jakarta Sans', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; line-height: 1.6; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      position: sticky; top: 0;
+      background: rgba(15,23,42,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 900px; margin: 0 auto;
+      height: 60px; display: flex; align-items: center; gap: 12px;
+    }
+    .back-btn {
+      display: flex; align-items: center; gap: 6px;
+      color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600;
+      transition: color 0.18s;
+    }
+    .back-btn:hover { color: var(--accent); }
+    .logo { font-size: 1rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    .page-hero {
+      max-width: 900px; margin: 0 auto;
+      padding: 48px 24px 32px;
+    }
+    .breadcrumb {
+      font-size: 0.75rem; color: var(--muted); margin-bottom: 12px;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
+    .page-desc { color: var(--muted); font-size: 0.9rem; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* STATS STRIP */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 1.8rem; font-weight: 800; color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    /* TEXTAREA */
+    .editor-wrap { position: relative; }
+    textarea {
+      width: 100%;
+      min-height: 280px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      padding: 16px;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+    textarea:focus { border-color: var(--accent); }
+    textarea::placeholder { color: var(--muted); }
+
+    .actions {
+      display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;
+    }
+    .btn {
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary {
+      background: var(--accent); border-color: var(--accent); color: #0F172A;
+    }
+    .btn-primary:hover { background: #38BDF8; border-color: #38BDF8; color: #0F172A; }
+
+    /* READING TIME */
+    .extra-info {
+      margin-top: 20px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex; flex-wrap: wrap; gap: 24px;
+    }
+    .info-item { font-size: 0.85rem; color: var(--muted); }
+    .info-item strong { color: var(--text); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px; text-align: center;
+      color: var(--muted); font-size: 0.78rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .page-hero, main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="back-btn" href="/toolkit/">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Kembali
+      </a>
+      <a class="logo" href="/toolkit/">⚡ Toolbox<span>Online</span></a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="breadcrumb">
+      <a href="/toolkit/">Home</a> › <a href="#">Tools Teks</a> › Word & Character Count
+    </div>
+    <h1>📝 Word & Character Count</h1>
+    <p class="page-desc">Hitung jumlah kata, karakter, kalimat, dan paragraf dari teks secara instan.</p>
+  </div>
+
+  <main>
+    <div class="stats-strip">
+      <div class="stat-card"><div class="stat-num" id="s-kata">0</div><div class="stat-label">Kata</div></div>
+      <div class="stat-card"><div class="stat-num" id="s-karakter">0</div><div class="stat-label">Karakter</div></div>
+      <div class="stat-card"><div class="stat-num" id="s-tanpa-spasi">0</div><div class="stat-label">Tanpa Spasi</div></div>
+      <div class="stat-card"><div class="stat-num" id="s-kalimat">0</div><div class="stat-label">Kalimat</div></div>
+      <div class="stat-card"><div class="stat-num" id="s-paragraf">0</div><div class="stat-label">Paragraf</div></div>
+    </div>
+
+    <div class="editor-wrap">
+      <textarea id="input" placeholder="Ketik atau tempel teks di sini…"></textarea>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="copyResult()">Salin Ringkasan</button>
+      <button class="btn" onclick="clearText()">Hapus Teks</button>
+    </div>
+
+    <div class="extra-info">
+      <div class="info-item">⏱️ Estimasi baca: <strong id="read-time">0 detik</strong></div>
+      <div class="info-item">🗣️ Estimasi bicara: <strong id="speak-time">0 detik</strong></div>
+      <div class="info-item">📚 Kata unik: <strong id="unique-words">0</strong></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ToolboxOnline &nbsp;·&nbsp; <a href="/toolkit/">Kembali ke Dashboard</a></p>
+  </footer>
+
+  <script>
+    const inputEl = document.getElementById("input");
+
+    function analyze(text) {
+      const trimmed = text.trim();
+      const words   = trimmed === "" ? [] : trimmed.split(/\s+/);
+      const chars   = text.length;
+      const noSpace = text.replace(/\s/g, "").length;
+      const sentences = trimmed === "" ? 0 : (trimmed.match(/[^.!?]*[.!?]+/g) || [trimmed]).length;
+      const paras   = trimmed === "" ? 0 : trimmed.split(/\n\s*\n/).filter(p => p.trim() !== "").length || (trimmed ? 1 : 0);
+      const uniqueW = new Set(words.map(w => w.toLowerCase().replace(/[^a-z0-9]/g, ""))).size;
+      const readSec = Math.ceil(words.length / 200 * 60);
+      const speakSec= Math.ceil(words.length / 130 * 60);
+
+      return { words: words.length, chars, noSpace, sentences, paras, uniqueW, readSec, speakSec };
+    }
+
+    function formatTime(sec) {
+      if (sec < 60) return sec + " detik";
+      const m = Math.floor(sec / 60), s = sec % 60;
+      return m + " menit" + (s ? " " + s + " detik" : "");
+    }
+
+    function update() {
+      const r = analyze(inputEl.value);
+      document.getElementById("s-kata").textContent      = r.words.toLocaleString("id");
+      document.getElementById("s-karakter").textContent  = r.chars.toLocaleString("id");
+      document.getElementById("s-tanpa-spasi").textContent = r.noSpace.toLocaleString("id");
+      document.getElementById("s-kalimat").textContent   = r.sentences.toLocaleString("id");
+      document.getElementById("s-paragraf").textContent  = r.paras.toLocaleString("id");
+      document.getElementById("read-time").textContent   = formatTime(r.readSec);
+      document.getElementById("speak-time").textContent  = formatTime(r.speakSec);
+      document.getElementById("unique-words").textContent= r.uniqueW.toLocaleString("id");
+    }
+
+    function clearText() {
+      inputEl.value = "";
+      update();
+      inputEl.focus();
+    }
+
+    function copyResult() {
+      const r = analyze(inputEl.value);
+      const summary = `Word Count – Hasil Analisis\n`
+        + `Kata       : ${r.words}\n`
+        + `Karakter   : ${r.chars}\n`
+        + `Tanpa spasi: ${r.noSpace}\n`
+        + `Kalimat    : ${r.sentences}\n`
+        + `Paragraf   : ${r.paras}\n`
+        + `Baca       : ${formatTime(r.readSec)}\n`
+        + `Bicara     : ${formatTime(r.speakSec)}`;
+      navigator.clipboard.writeText(summary).then(() => {
+        const btn = document.querySelector(".btn-primary");
+        const orig = btn.textContent;
+        btn.textContent = "✓ Tersalin!";
+        setTimeout(() => btn.textContent = orig, 1800);
+      });
+    }
+
+    inputEl.addEventListener("input", update);
+    update();
+  </script>
+</body>
+</html>
