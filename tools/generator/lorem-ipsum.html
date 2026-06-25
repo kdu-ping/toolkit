@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generator Lorem Ipsum – Teks Placeholder Online Gratis | ToolboxOnline</title>
+  <meta name="description" content="Buat teks lorem ipsum untuk kebutuhan desain atau mockup. Pilih jumlah paragraf, kalimat, atau kata. Gratis, instan, tanpa login." />
+  <link rel="canonical" href="https://kdu-ping.github.io/toolkit/tools/generator/lorem-ipsum.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0F172A; --surface: #1E293B; --border: #334155; --accent: #22D3EE; --text: #F8FAFC; --muted: #94A3B8; --radius: 12px; --font: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; line-height: 1.6; }
+    header { border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .header-inner { max-width: 900px; margin: 0 auto; height: 60px; display: flex; align-items: center; gap: 12px; }
+    .back-btn { display: flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: color 0.18s; }
+    .back-btn:hover { color: var(--accent); }
+    .logo { font-size: 1rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .page-hero { max-width: 900px; margin: 0 auto; padding: 48px 24px 32px; }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
+    .page-desc { color: var(--muted); font-size: 0.9rem; }
+    main { max-width: 700px; margin: 0 auto; padding: 0 24px 80px; }
+    .control-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+    .ctrl-group { display: flex; flex-direction: column; gap: 6px; }
+    .ctrl-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    select, .inp-num { padding: 10px 14px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text); font-family: var(--font); font-size: 0.9rem; font-weight: 600; outline: none; transition: border-color 0.18s; }
+    select:focus, .inp-num:focus { border-color: var(--accent); }
+    .inp-num { width: 80px; }
+    .btn { padding: 10px 24px; border-radius: var(--radius); border: none; background: var(--accent); color: #0F172A; font-family: var(--font); font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: background 0.18s; }
+    .btn:hover { background: #38BDF8; }
+    .toggle-wrap { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--muted); }
+    .toggle { position: relative; width: 40px; height: 22px; cursor: pointer; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--border); border-radius: 99px; transition: 0.2s; }
+    .toggle-slider::before { content: ""; position: absolute; width: 16px; height: 16px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.2s; }
+    .toggle input:checked + .toggle-slider { background: var(--accent); }
+    .toggle input:checked + .toggle-slider::before { transform: translateX(18px); }
+    .output-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .output-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    .copy-btn { padding: 7px 16px; border-radius: 8px; border: 1.5px solid var(--border); background: transparent; color: var(--muted); font-family: var(--font); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.18s; }
+    .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .output-text { color: var(--muted); font-size: 0.9rem; line-height: 1.8; white-space: pre-wrap; }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.78rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 480px) { .page-hero, main { padding-left: 16px; padding-right: 16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="back-btn" href="/toolkit/"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Kembali</a>
+      <a class="logo" href="/toolkit/">⚡ Toolbox<span>Online</span></a>
+    </div>
+  </header>
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="/toolkit/">Home</a> › <a href="#">Generator</a> › Lorem Ipsum</div>
+    <h1>📄 Generator Lorem Ipsum</h1>
+    <p class="page-desc">Buat teks placeholder untuk kebutuhan desain atau mockup.</p>
+  </div>
+  <main>
+    <div class="control-card">
+      <div class="ctrl-group">
+        <div class="ctrl-label">Tipe</div>
+        <select id="type">
+          <option value="paragraf">Paragraf</option>
+          <option value="kalimat">Kalimat</option>
+          <option value="kata">Kata</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <div class="ctrl-label">Jumlah</div>
+        <input class="inp-num" type="number" id="amount" value="3" min="1" max="50" />
+      </div>
+      <div class="ctrl-group">
+        <div class="ctrl-label">Mulai dengan "Lorem ipsum"</div>
+        <div class="toggle-wrap">
+          <label class="toggle"><input type="checkbox" id="startLorem" checked /><span class="toggle-slider"></span></label>
+          <span>Ya</span>
+        </div>
+      </div>
+      <button class="btn" onclick="generate()">Generate</button>
+    </div>
+    <div class="output-card">
+      <div class="output-header">
+        <div class="output-label">Hasil</div>
+        <button class="copy-btn" onclick="copyText()">Salin Semua</button>
+      </div>
+      <div class="output-text" id="output">Klik "Generate" untuk membuat teks lorem ipsum…</div>
+    </div>
+  </main>
+  <footer><p>© 2025 ToolboxOnline &nbsp;·&nbsp; <a href="/toolkit/">Kembali ke Dashboard</a></p></footer>
+  <script>
+    const words = ["lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit","sed","do","eiusmod","tempor","incididunt","ut","labore","et","dolore","magna","aliqua","enim","ad","minim","veniam","quis","nostrud","exercitation","ullamco","laboris","nisi","aliquip","ex","ea","commodo","consequat","duis","aute","irure","in","reprehenderit","voluptate","velit","esse","cillum","eu","fugiat","nulla","pariatur","excepteur","sint","occaecat","cupidatat","non","proident","sunt","culpa","qui","officia","deserunt","mollit","anim","id","est","laborum","curabitur","pretium","tincidunt","lacus","nunc","purus","accumsan","libero","vel","malesuada","diam","finibus","leo","vitae","tortor","porttitor","viverra","maximus","augue","bibendum","lacinia","erat","elementum","sapien","condimentum","luctus","iaculis","ante","quam","porta","gravida","arcu","posuere","quisque","interdum","blandit","vestibulum","congue","orci","fermentum","suspendisse","dapibus","euismod","proin","rhoncus","varius","pellentesque","etiam","scelerisque","phasellus","morbi","faucibus","vivamus","maecenas","ultrices","commodo","pulvinar","aliquet","nisl","ligula","cursus","semper"];
+
+    function randWord() { return words[Math.floor(Math.random() * words.length)]; }
+    function randSentence() {
+      const len = 8 + Math.floor(Math.random() * 12);
+      let s = [];
+      for (let i = 0; i < len; i++) s.push(randWord());
+      return s[0].charAt(0).toUpperCase() + s[0].slice(1) + " " + s.slice(1).join(" ") + ".";
+    }
+    function randParagraph() {
+      const len = 4 + Math.floor(Math.random() * 4);
+      let p = [];
+      for (let i = 0; i < len; i++) p.push(randSentence());
+      return p.join(" ");
+    }
+
+    function generate() {
+      const type = document.getElementById("type").value;
+      const amount = Math.min(50, Math.max(1, parseInt(document.getElementById("amount").value) || 3));
+      const startLorem = document.getElementById("startLorem").checked;
+      let result = [];
+      for (let i = 0; i < amount; i++) {
+        if (type === "paragraf") result.push(randParagraph());
+        else if (type === "kalimat") result.push(randSentence());
+        else result.push(randWord());
+      }
+      if (startLorem && result.length > 0) {
+        if (type === "paragraf") result[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " + result[0];
+        else if (type === "kalimat") result[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+        else result[0] = "lorem";
+      }
+      document.getElementById("output").textContent = type === "kata" ? result.join(" ") : result.join("\n\n");
+    }
+
+    function copyText() {
+      const text = document.getElementById("output").textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector(".copy-btn");
+        const orig = btn.textContent;
+        btn.textContent = "✓ Tersalin!";
+        setTimeout(() => btn.textContent = orig, 1800);
+      });
+    }
+
+    generate();
+  </script>
+</body>
+</html>
