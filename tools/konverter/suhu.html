@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konverter Suhu – Celsius, Fahrenheit, Kelvin Online | ToolboxOnline</title>
+  <meta name="description" content="Konversi suhu online: Celsius, Fahrenheit, Kelvin, dan Rankine. Gratis, instan, tanpa login." />
+  <link rel="canonical" href="https://kdu-ping.github.io/toolkit/tools/konverter/suhu.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0F172A; --surface: #1E293B; --border: #334155; --accent: #22D3EE; --text: #F8FAFC; --muted: #94A3B8; --radius: 12px; --font: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; line-height: 1.6; }
+    header { border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .header-inner { max-width: 900px; margin: 0 auto; height: 60px; display: flex; align-items: center; gap: 12px; }
+    .back-btn { display: flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: color 0.18s; }
+    .back-btn:hover { color: var(--accent); }
+    .logo { font-size: 1rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .page-hero { max-width: 900px; margin: 0 auto; padding: 48px 24px 32px; }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
+    .page-desc { color: var(--muted); font-size: 0.9rem; }
+    main { max-width: 600px; margin: 0 auto; padding: 0 24px 80px; }
+    .temp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    @media (max-width: 480px) { .temp-grid { grid-template-columns: 1fr; } }
+    .temp-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px; transition: border-color 0.18s; }
+    .temp-card:focus-within { border-color: var(--accent); }
+    .temp-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .temp-input { width: 100%; background: transparent; border: none; color: var(--accent); font-family: var(--font); font-size: 2rem; font-weight: 800; outline: none; }
+    .temp-input::placeholder { color: var(--border); }
+    .temp-unit { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+    .reference-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .ref-title { padding: 14px 20px; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; }
+    td, th { padding: 10px 20px; font-size: 0.82rem; text-align: left; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    th { font-weight: 700; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.78rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 480px) { .page-hero, main { padding-left: 16px; padding-right: 16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="back-btn" href="/toolkit/"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Kembali</a>
+      <a class="logo" href="/toolkit/">⚡ Toolbox<span>Online</span></a>
+    </div>
+  </header>
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="/toolkit/">Home</a> › <a href="#">Konverter</a> › Konverter Suhu</div>
+    <h1>🌡️ Konverter Suhu</h1>
+    <p class="page-desc">Konversi Celsius, Fahrenheit, Kelvin, dan Rankine secara instan.</p>
+  </div>
+  <main>
+    <div class="temp-grid">
+      <div class="temp-card">
+        <div class="temp-label">Celsius</div>
+        <input class="temp-input" type="number" id="c" placeholder="0" oninput="fromC(this.value)" />
+        <div class="temp-unit">°C – Skala umum di Indonesia</div>
+      </div>
+      <div class="temp-card">
+        <div class="temp-label">Fahrenheit</div>
+        <input class="temp-input" type="number" id="f" placeholder="32" oninput="fromF(this.value)" />
+        <div class="temp-unit">°F – Dipakai di Amerika</div>
+      </div>
+      <div class="temp-card">
+        <div class="temp-label">Kelvin</div>
+        <input class="temp-input" type="number" id="k" placeholder="273.15" oninput="fromK(this.value)" />
+        <div class="temp-unit">K – Dipakai dalam sains</div>
+      </div>
+      <div class="temp-card">
+        <div class="temp-label">Rankine</div>
+        <input class="temp-input" type="number" id="r" placeholder="491.67" oninput="fromR(this.value)" />
+        <div class="temp-unit">°R – Versi Fahrenheit absolut</div>
+      </div>
+    </div>
+    <div class="reference-card">
+      <div class="ref-title">Referensi Suhu Umum</div>
+      <table>
+        <tr><th>Kondisi</th><th>°C</th><th>°F</th><th>K</th></tr>
+        <tr><td>Titik beku air</td><td>0</td><td>32</td><td>273.15</td></tr>
+        <tr><td>Suhu tubuh normal</td><td>37</td><td>98.6</td><td>310.15</td></tr>
+        <tr><td>Suhu ruangan</td><td>25</td><td>77</td><td>298.15</td></tr>
+        <tr><td>Titik didih air</td><td>100</td><td>212</td><td>373.15</td></tr>
+        <tr><td>Nol absolut</td><td>-273.15</td><td>-459.67</td><td>0</td></tr>
+      </table>
+    </div>
+  </main>
+  <footer><p>© 2025 ToolboxOnline &nbsp;·&nbsp; <a href="/toolkit/">Kembali ke Dashboard</a></p></footer>
+  <script>
+    function r(n) { return Math.round(n * 10000) / 10000; }
+    function setAll(c, f, k, rk) {
+      document.getElementById("c").value = r(c);
+      document.getElementById("f").value = r(f);
+      document.getElementById("k").value = r(k);
+      document.getElementById("r").value = r(rk);
+    }
+    function fromC(v) { if (v==="") return; const c=parseFloat(v); setAll(c, c*9/5+32, c+273.15, (c+273.15)*9/5); document.getElementById("c").value=v; }
+    function fromF(v) { if (v==="") return; const f=parseFloat(v); const c=(f-32)*5/9; setAll(c, f, c+273.15, f+459.67); document.getElementById("f").value=v; }
+    function fromK(v) { if (v==="") return; const k=parseFloat(v); const c=k-273.15; setAll(c, c*9/5+32, k, k*9/5); document.getElementById("k").value=v; }
+    function fromR(v) { if (v==="") return; const rk=parseFloat(v); const k=rk*5/9; const c=k-273.15; setAll(c, c*9/5+32, k, rk); document.getElementById("r").value=v; }
+  </script>
+</body>
+</html>
