@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Converter – Ubah Teks Online Gratis | ToolboxOnline</title>
+  <meta name="description" content="Ubah teks ke UPPERCASE, lowercase, Title Case, atau Sentence case secara online. Gratis, instan, tanpa login." />
+  <link rel="canonical" href="https://kdu-ping.github.io/toolkit/tools/teks/case-converter.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F172A; --surface: #1E293B; --border: #334155;
+      --accent: #22D3EE; --accent-dim: #0E7490;
+      --text: #F8FAFC; --muted: #94A3B8;
+      --radius: 12px; --font: 'Plus Jakarta Sans', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; line-height: 1.6; }
+    header { border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .header-inner { max-width: 900px; margin: 0 auto; height: 60px; display: flex; align-items: center; gap: 12px; }
+    .back-btn { display: flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: color 0.18s; }
+    .back-btn:hover { color: var(--accent); }
+    .logo { font-size: 1rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .page-hero { max-width: 900px; margin: 0 auto; padding: 48px 24px 32px; }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
+    .page-desc { color: var(--muted); font-size: 0.9rem; }
+    main { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+    .case-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .case-btn { padding: 10px 20px; border-radius: var(--radius); border: 1.5px solid var(--border); background: var(--surface); color: var(--text); font-family: var(--font); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.18s; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .case-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .case-btn.active { background: var(--accent); border-color: var(--accent); color: #0F172A; }
+    .case-btn small { font-size: 0.68rem; font-weight: 500; opacity: 0.7; }
+    .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .editor-grid { grid-template-columns: 1fr; } }
+    .editor-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    textarea { width: 100%; min-height: 240px; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: var(--font); font-size: 0.95rem; line-height: 1.7; padding: 16px; resize: vertical; outline: none; transition: border-color 0.18s; }
+    textarea:focus { border-color: var(--accent); }
+    textarea::placeholder { color: var(--muted); }
+    .actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .btn { padding: 9px 20px; border-radius: var(--radius); border: 1.5px solid var(--border); background: transparent; color: var(--muted); font-family: var(--font); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.18s; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #0F172A; }
+    .btn-primary:hover { background: #38BDF8; border-color: #38BDF8; color: #0F172A; }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.78rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 480px) { .page-hero, main { padding-left: 16px; padding-right: 16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="back-btn" href="/toolkit/">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Kembali
+      </a>
+      <a class="logo" href="/toolkit/">⚡ Toolbox<span>Online</span></a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="breadcrumb">
+      <a href="/toolkit/">Home</a> › <a href="#">Tools Teks</a> › Case Converter
+    </div>
+    <h1>🔤 Case Converter</h1>
+    <p class="page-desc">Ubah teks ke berbagai format huruf secara instan.</p>
+  </div>
+
+  <main>
+    <div class="case-buttons">
+      <button class="case-btn active" data-case="uppercase">UPPERCASE<small>semua huruf besar</small></button>
+      <button class="case-btn" data-case="lowercase">lowercase<small>semua huruf kecil</small></button>
+      <button class="case-btn" data-case="titlecase">Title Case<small>awal kata kapital</small></button>
+      <button class="case-btn" data-case="sentencecase">Sentence case<small>awal kalimat kapital</small></button>
+      <button class="case-btn" data-case="alternating">aLtErNaTiNg<small>selang-seling</small></button>
+      <button class="case-btn" data-case="inverse">iNVERSE cASE<small>balik huruf besar/kecil</small></button>
+    </div>
+
+    <div class="editor-grid">
+      <div>
+        <div class="editor-label">Teks Asli</div>
+        <textarea id="input" placeholder="Ketik atau tempel teks di sini…"></textarea>
+      </div>
+      <div>
+        <div class="editor-label">Hasil</div>
+        <textarea id="output" readonly placeholder="Hasil konversi akan muncul di sini…"></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="copyOutput()">Salin Hasil</button>
+      <button class="btn" onclick="swapText()">⇄ Balik ke Input</button>
+      <button class="btn" onclick="clearAll()">Hapus Semua</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ToolboxOnline &nbsp;·&nbsp; <a href="/toolkit/">Kembali ke Dashboard</a></p>
+  </footer>
+
+  <script>
+    let activeCase = "uppercase";
+    const converters = {
+      uppercase:    t => t.toUpperCase(),
+      lowercase:    t => t.toLowerCase(),
+      titlecase:    t => t.replace(/\w\S*/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()),
+      sentencecase: t => t.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase()),
+      alternating:  t => t.split("").map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join(""),
+      inverse:      t => t.split("").map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()).join(""),
+    };
+    function convert() {
+      document.getElementById("output").value = converters[activeCase](document.getElementById("input").value);
+    }
+    document.querySelectorAll(".case-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".case-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeCase = btn.dataset.case;
+        convert();
+      });
+    });
+    document.getElementById("input").addEventListener("input", convert);
+    function copyOutput() {
+      const output = document.getElementById("output").value;
+      if (!output) return;
+      navigator.clipboard.writeText(output).then(() => {
+        const btn = document.querySelector(".btn-primary");
+        const orig = btn.textContent;
+        btn.textContent = "✓ Tersalin!";
+        setTimeout(() => btn.textContent = orig, 1800);
+      });
+    }
+    function swapText() {
+      const output = document.getElementById("output").value;
+      if (!output) return;
+      document.getElementById("input").value = output;
+      convert();
+    }
+    function clearAll() {
+      document.getElementById("input").value = "";
+      document.getElementById("output").value = "";
+    }
+  </script>
+</body>
+</html>
